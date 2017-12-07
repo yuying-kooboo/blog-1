@@ -46,8 +46,8 @@ const config = {
         loader: 'babel-loader?presets[]=es2015,presets[]=stage-0'
       },
       {
-        test: /(pages|comments|templates)\/([^\.]+)\.html$/,
-        use: 'raw-loader'
+        test: /\.html$/,
+        loader: 'raw-loader'
       },
       {
         test: /\.(eot|woff|svg|ttf|woff2)(\?|$)/,
