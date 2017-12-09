@@ -1,4 +1,4 @@
-<div class="articleListPage labs-list-pager ${pageClass}">
+<div class="articleListPage labs-list-pager labs-list-pager-fe">
 	<div class="labs-header" style="background-image: url(${photography.imgSrc})">
 		<div class="photograghy-author">
 			<a href="${photography.htmlSrc}" target="_blank">${photography.title} By:@剧中人</a>
@@ -10,10 +10,10 @@
 				<div class="labs-profile-card">
 					<a href="${thirdProfile.url}" target="_blank">
 								<span class="profile-icon"></span>
-								小编的相关博文
+								${thirdProfile.title}
 							</a>
 				</div>
-				<p class="notice">相关博文</p>
+				<p class="notice">${thirdProfile.intro}</p>
 			</div>
 		</div>
 	</div>
