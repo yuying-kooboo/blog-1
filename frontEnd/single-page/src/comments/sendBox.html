@@ -6,15 +6,37 @@
   <div class="l_sendBox_main">
     <div class="l_send_textarea">
       <textarea name="content"></textarea>
-      <div class="l_send_placeholder">评论屌一点，BUG少一点！</div>
+      <div class="l_send_placeholder">你的疑惑可以写在这里！</div>     
     </div>
+    <div class="l_send_confirm">
+        <label>是否委托案件：</label>
+        <div class="checkbox">
+          <input id="yes" type="checkbox" name="yes">
+          <label for="yes">是</label>
+        </div>
+        <div class="checkbox">
+          <input id="no" type="checkbox" name="no">
+          <label for="no">否</label>
+        </div>
+    </div> 
+    <div class="l_send_contact">
+        
+        <div class="contact-field">
+          <label for="name">联系人姓名：</label>
+          <input id="name" type="text" name="name">
+        </div>
+        <div class="contact-field">
+            <label for="phone">联系人电话：</label>
+            <input id="phone" type="text" name="phone">
+        </div>
+    </div> 
     <div class="l_send_footer">
       <div class="l_send_footer_left">
         <a href="javascript:void(0)" title="插入表情" class="l_send_face"><span class="l-icon l-icon-face"></span></a>
         <div class="l_send_count"><b>500</b><i>/</i><span>500</span></div>
       </div>
       <div class="l_send_footer_right">
-        <a href="javascript:void(0)" class="l_send_submit">发布</a>
+        <a href="javascript:void(0)" class="l_send_submit">提交</a>
       </div>
     </div>
   </div>
