@@ -1,8 +1,20 @@
-<div class="articleListPage">
-	<div class="header">
-		<div class="mac">
-			<div class="logo"><i class="l-icon l-icon-layLogo"></i></div>
-			<p>小编的分享在此</p>
+<div class="articleListPage labs-list-pager ${pageClass}">
+	<div class="labs-header" style="background-image: url(${photography.imgSrc})">
+		<div class="photograghy-author">
+			<a href="${photography.htmlSrc}" target="_blank">${photography.title} By:@剧中人</a>
+		</div>
+	</div>
+	<div class="labs-sub-header">
+		<div class="grid-row">
+			<div class="grid-box-full">
+				<div class="labs-profile-card">
+					<a href="${thirdProfile.url}" target="_blank">
+								<span class="profile-icon"></span>
+								小编的相关博文
+							</a>
+				</div>
+				<p class="notice">相关博文</p>
+			</div>
 		</div>
 	</div>
 	<div class="articleListPage-tags-cnt">
@@ -14,6 +26,8 @@
 	</div>
 	<div class="grid-row">
 		<div class="articleList"></div>
-		<div class="status"><div class="l-loading-panel"><span class="l-loading"></span></div></div>
+		<div class="status">
+			<div class="l-loading-panel"><span class="l-loading"></span></div>
+		</div>
 	</div>
 </div>
