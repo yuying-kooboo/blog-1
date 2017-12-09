@@ -12,14 +12,14 @@ let potoGraphaList = [
   {
     title: '随处撸码',
     author: '剧中人',
-    imgSrc: require('./images/aboutme_2.jpg'),
-    htmlSrc: 'https://bh-lay.tuchong.com/14977204/'
+    imgSrc: require('./images/aboutme_2.jpg')
+    // htmlSrc: 'https://bh-lay.tuchong.com/14977204/'
   },
   {
     title: '办公室背影',
     author: 'Oo浪沫',
-    imgSrc: require('./images/aboutme.jpg'),
-    htmlSrc: 'https://bh-lay.tuchong.com/'
+    imgSrc: require('./images/aboutme.jpg')
+    // htmlSrc: 'https://bh-lay.tuchong.com/'
   }
 ];
 let potoGraphaIndex = -1;
