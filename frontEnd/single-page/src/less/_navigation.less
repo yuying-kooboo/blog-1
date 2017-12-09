@@ -36,6 +36,20 @@
       }
     }
   }
+  .nav-app-name {
+    background: url('../images/logo.jpg') no-repeat center;
+    padding: 0 1.2em;
+  }
+  .nav-app-name,
+  .nav-name {
+    float: left;
+    display: block;
+    height: @nav_height;
+    line-height: 55px;
+    font-size: 32px;
+    color: #ff9800;
+    background-size: 55px 55px;
+  }
   .nav-more-btn {
     position: absolute;
     display: block;
@@ -63,22 +77,6 @@
       }
     }
   }
-}
-.nav-app-name {
-  background: url('../images/logo.jpg') no-repeat center;
-  padding: 0 1.2em;
-  &:extend(.nav-app-name-footer);
-}
-.nav-app-name,
-.nav-name {
-  float: left;
-  display: block;
-  height: @nav_height;
-  line-height: 55px;
-  font-size: 32px;
-  color: #ff9800;
-  background-size: 55px 55px;
-  &:extend(.nav-app-name-footer);
 }
 
 @media screen and (min-width: 660px) {
@@ -125,10 +123,9 @@
     float: right;
     text-align: right;
   }
-}
-.nav-app-name {
-  float: left;
-  &:extend(.nav-app-name-footer);
+  .nav-app-name {
+    float: left;
+  }
 }
 
 @media screen and (max-width: 660px) {

@@ -309,9 +309,9 @@ SendBox.prototype = {
     if (this.isSubmitting) {
       return null;
     } else if (this.text.length === 0) {
-      UI.prompt('你丫倒写点东西啊！', null);
+      UI.prompt('你还没写东西呢！', null);
     } else if (this.text.length > 500) {
-      UI.prompt('这是要刷屏的节奏么！', null);
+      UI.prompt('你刷的太频繁啦！', null);
     } else if (privateUserInfo) {
       let text = this.onBeforeSend ? (this.onBeforeSend(me.text) || me.text) : me.text;
       me.isSubmitting = true;

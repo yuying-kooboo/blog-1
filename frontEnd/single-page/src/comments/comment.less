@@ -50,6 +50,7 @@
   background: #fff;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
 }
 
 .l_send_side {
@@ -134,6 +135,21 @@
   margin-bottom: 12px;
   >* {
     display: inline-block;
+  } 
+  input {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    &:hover {
+      color: #ff9800;
+    }
+  }
+  label {
+    vertical-align: middle;
+    &:hover {
+      color: #ff9800;
+    }
   }
 }
 
@@ -143,9 +159,16 @@
     margin-top: 10px;
     label {
       margin-right: 10px;
+      &:hover {
+        color: #ff9800;
+      }
     }
     input {
-      
+      line-height: 20px;
+      border: solid 1px #ddd;
+      &:hover {
+        color: #ff9800;
+      }
     }
   }
 }
