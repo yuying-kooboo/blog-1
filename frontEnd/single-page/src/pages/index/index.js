@@ -4,22 +4,25 @@
  */
 
 import './index.less';
+// import '../../less/swiper-3.4.2.min.lesss';
 import utils from '../../js/Base.js';
 import juicer from '../../js/juicer.js';
+// import swiper from '../../js/swiper-3.4.2.jquery.min.js';
+// import swiper from '../../js/swiper-3.4.2.min.js';
 
 const temp = require('./index.html');
 let potoGraphaList = [
   {
     title: '随处撸码',
     author: '剧中人',
-    imgSrc: require('./images/aboutme_2.jpg')
-    // htmlSrc: 'https://bh-lay.tuchong.com/14977204/'
+    imgSrc: require('./images/aboutme_2.jpg'),
+    htmlSrc: 'https://bh-lay.tuchong.com/14977204/'
   },
   {
     title: '办公室背影',
     author: 'Oo浪沫',
-    imgSrc: require('./images/aboutme.jpg')
-    // htmlSrc: 'https://bh-lay.tuchong.com/'
+    imgSrc: require('./images/aboutme.jpg'),
+    htmlSrc: 'https://bh-lay.tuchong.com/'
   }
 ];
 let potoGraphaIndex = -1;
