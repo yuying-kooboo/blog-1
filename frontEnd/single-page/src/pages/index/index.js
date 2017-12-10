@@ -4,8 +4,11 @@
  */
 
 import './index.less';
+// import '../../less/swiper-3.4.2.min.lesss';
 import utils from '../../js/Base.js';
 import juicer from '../../js/juicer.js';
+// import swiper from '../../js/swiper-3.4.2.jquery.min.js';
+// import swiper from '../../js/swiper-3.4.2.min.js';
 
 const temp = require('./index.html');
 let potoGraphaList = [

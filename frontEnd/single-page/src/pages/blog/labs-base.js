@@ -8,7 +8,7 @@ import utils from '../../js/Base.js';
 import juicer from '../../js/juicer.js';
 
 let emptyTpl = '<div class=\'blank-content\'><p>啥都木有</p></div>';
-let baseTpl = require('./labsListBase.html');
+let baseTpl = require('./blogListBase.html');
 let itemTemp = require('../labs/postListItem.html');
 let potoGraphaList = [
   {

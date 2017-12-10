@@ -22,7 +22,7 @@ let itemTpl = require('./item.html');
  * 格式化网址
  *
  */
-function parseUrl (input) {
+function parseUrl(input) {
   let output = null;
   // 是否符合网址规范
   if (typeof input === 'string' && input.match(/[\w-]+\.\w{2,4}/)) {
@@ -33,7 +33,7 @@ function parseUrl (input) {
 }
 
 // 处理自定义事件
-function ON (eventName, callback) {
+function ON(eventName, callback) {
   this._events = this._events || {};
   // 事件堆无该事件，创建一个事件堆
   if (!this._events[eventName]) {
@@ -44,7 +44,7 @@ function ON (eventName, callback) {
   return this;
 }
 
-function EMIT (eventName, args) {
+function EMIT(eventName, args) {
   this._events = this._events || {};
   // 事件堆无该事件，结束运行
   if (!this._events[eventName]) {
@@ -59,7 +59,7 @@ function EMIT (eventName, args) {
  * 设置用户信息
  *
  */
-function setUserInfoToUI (userInput) {
+function setUserInfoToUI(userInput) {
   userInput = userInput || {};
   let user = {
     username: userInput.username || '',
@@ -77,7 +77,7 @@ function setUserInfoToUI (userInput) {
 /**
  * 转换emoji表情
  */
-function strToEmoji (str) {
+function strToEmoji(str) {
   return str.replace(/:((\w|-)+):/g, '<span class="emoji s_$1"></span>');
 }
 
@@ -85,7 +85,7 @@ function strToEmoji (str) {
  * 发送评论
  *
  */
-function sendComment (data, onSubmit) {
+function sendComment(data, onSubmit) {
   let user;
   if (data.user.id) {
     user = null;
@@ -95,7 +95,6 @@ function sendComment (data, onSubmit) {
     onSubmit && onSubmit('未登录');
     return;
   }
-
   utils.fetch({
     url: '/ajax/comments/add',
     type: 'POST',
@@ -104,7 +103,10 @@ function sendComment (data, onSubmit) {
       content: data.text,
       // 如果为登录用户，则不发送用户信息
       user: user,
-      reply_for_id: data.reply_for_id
+      reply_for_id: data.reply_for_id,
+      confirm: data.confirm,
+      phone: data.phone,
+      name: data.name
     },
     callback: function (err, data) {
       if (!err && data.code && data.code === 200) {
@@ -120,7 +122,7 @@ function sendComment (data, onSubmit) {
  * 询问用户信息
  *
  */
-function askForUserInfo (callback) {
+function askForUserInfo(callback) {
   let me = this;
   // 用户信息
   let user = privateUserInfo;
@@ -136,7 +138,7 @@ function askForUserInfo (callback) {
   let nodeEmail = utils.query('input[name="email"]', pop.dom);
   let nodeBlog = utils.query('input[name="blog"]', pop.dom);
 
-  function confirmFn () {
+  function confirmFn() {
     let username = nodeUsername.value;
     let email = nodeEmail.value;
     let blog = nodeBlog.value;
@@ -179,7 +181,7 @@ function askForUserInfo (callback) {
 /**
  * 绑定dom事件
  */
-function bindDomEvent () {
+function bindDomEvent() {
   let me = this;
   let nodeGlobal = me.dom;
   let nodeTextarea = utils.query('textarea', nodeGlobal);
@@ -231,7 +233,7 @@ function bindDomEvent () {
 }
 
 // 绑定对象自定义事件
-function bindCustomEvent () {
+function bindCustomEvent() {
   let me = this;
   let nodeGlobal = this.dom;
   let nodeTextarea = utils.query('textarea', nodeGlobal);
@@ -268,7 +270,7 @@ function bindCustomEvent () {
 /**
  * SendBox类
  */
-function SendBox (dom, id, param) {
+function SendBox(dom, id, param) {
   param = param || {};
   let me = this;
   this.id = id;
@@ -315,11 +317,21 @@ SendBox.prototype = {
     } else if (privateUserInfo) {
       let text = this.onBeforeSend ? (this.onBeforeSend(me.text) || me.text) : me.text;
       me.isSubmitting = true;
+      var $confirm = me.dom.querySelectorAll('[name=confirm]:checked');
+      let confirm, phone, name;
+      if ($confirm.length > 0) {
+        confirm = $confirm[0].value;
+      }
+      phone = me.dom.querySelector('#phone').value;
+      name = me.dom.querySelector('#name').value;
       sendComment({
         id: me.id,
         text: text,
         user: privateUserInfo,
-        reply_for_id: me.reply_for_id || null
+        reply_for_id: me.reply_for_id || null,
+        confirm: confirm,
+        phone: phone,
+        name: name
       }, function (err, item) {
         me.isSubmitting = false;
         if (err) {
@@ -340,7 +352,7 @@ SendBox.prototype = {
  * 列表类
  *
  */
-function List (dom, cid, param) {
+function List(dom, cid, param) {
   let me = this;
   param = param || {};
   // comment id
@@ -478,7 +490,7 @@ List.prototype.getData = function (skip, onResponse) {
   });
 };
 
-function Init (dom, id, param) {
+function Init(dom, id, param) {
   let me = this;
   this.dom = utils.createDom(baseTpl);
   this.id = id;
@@ -492,4 +504,4 @@ function Init (dom, id, param) {
   });
 }
 
-export {SendBox, List, Init};
+export { SendBox, List, Init };
