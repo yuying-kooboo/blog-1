@@ -62,7 +62,8 @@ html,
 body {
   color: #333;
   font-size: 14px;
-  font-family: "Microsoft YaHei", tahoma, arial, simsun, "宋体";
+  font-family: "Alleyn", Arial, sans-serif;
+  font-weight: 400;
 }
 .container {
   width: 90%;

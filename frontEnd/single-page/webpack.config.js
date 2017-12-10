@@ -50,7 +50,7 @@ const config = {
         loader: 'raw-loader'
       },
       {
-        test: /\.(eot|woff|svg|ttf|woff2)(\?|$)/,
+        test: /\.(otf|eot|woff|svg|ttf|woff2)(\?|$)/,
         loader: 'file-loader?name=font/[name].[hash:8].[ext]'
       },
       {
