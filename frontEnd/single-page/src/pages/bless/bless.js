@@ -5,7 +5,7 @@
 
 import './bless.less';
 import utils from '../../js/Base.js';
-import {SendBox, List} from '../../comments/index.js';
+import { SendBox, List } from '../../comments/index.js';
 import juicer from '../../js/juicer.js';
 
 let commentId = 'define-1';
@@ -25,13 +25,13 @@ let potoGraphaList = [
 let potoGraphaIndex = -1;
 
 // 模块替换
-function tplModule (txt) {
+function tplModule(txt) {
   return (txt && txt.length) ? txt.replace(/\[-(\w+)-\]/g, function (a, key) {
     return utils.query('#module_' + key).innerHTML || '';
   }) : '';
 };
 
-function page (global) {
+function page(global) {
   let baseTplEnd = tplModule(baseTpl);
   let node = global.node;
   node.innerHTML = juicer(baseTplEnd, {
@@ -45,6 +45,15 @@ function page (global) {
   sendBox.on('sendToServiceSuccess', function (item) {
     list.addItem(item);
   });
+
+  utils.query('.checkbox #yes', node).onclick = function (e) {
+    utils.query('.l_send_contact').style.display = 'block';
+  }
+
+  utils.query('.checkbox #no', node).onclick = function (e) {
+    utils.query('.l_send_contact').style.display = 'none';
+  }
 }
+
 
 export default page;
