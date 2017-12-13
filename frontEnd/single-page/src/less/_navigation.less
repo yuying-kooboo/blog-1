@@ -4,7 +4,9 @@
  * 导航
  */
 @nav_height: 55px;
-@basic_color: #ff9800;
+@hover_color: #ff9800;
+@font_color: #fff;
+@nav_background: #3290b5;
 .app-nav {
   position: fixed;
   top: 0;
@@ -18,7 +20,7 @@
       height: @nav_height - 2;
       margin-right: 1em;
       padding: 0 1em;
-      border-bottom: 2px solid #ff9800;
+      border-bottom: 2px solid @nav_background;
       outline: none;
       overflow: hidden;
       line-height: @nav_height;
@@ -30,10 +32,10 @@
       &.cur,
       &.cur:hover {
         border-bottom-color: currentColor;
-        color: #000;
+        color: @hover_color;
       }
       &:hover {
-        color: #000;
+        color: @hover_color;
       }
     }
   }
@@ -48,7 +50,7 @@
     height: @nav_height;
     line-height: 55px;
     font-size: 32px;
-    color: #fff;
+    color: @hover_color;
     background-size: 55px 55px;
     border-radius: 20px;
   }
@@ -97,14 +99,13 @@
       left: 0;
       width: 100%;
       height: @nav_height;
-      background: rgb(255, 152, 0);
+      background: @nav_background;
       opacity: 0;
       transform: translate(0, -10%);
       .transition(.2s, ease-out);
       transition-delay: .5s;
       visibility: hidden;
       z-index: 2;
-      background:#ff9800;
     }
     &.darken,
     &:hover {
@@ -159,7 +160,7 @@
     height: auto;
     top: 0;
     left: 0;
-    background: #fff;
+    background: @nav_background;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
     transform: translateY(-20px);
     opacity: 0;
