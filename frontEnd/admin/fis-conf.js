@@ -30,7 +30,7 @@ fis.match('app.js', {
 //发布位置
 fis.match('**', {
   release: 'build/admin/$0',
-  domain: 'http://127.0.0.1:8088'
+  domain: '//118.89.143.109:8088'
 });
 fis.match('/index.html', {
   release: '../sys/views/admin/index.html'
@@ -68,5 +68,5 @@ fis
   })
   //线上使用CDN
   .media('production').match('*', {
-    domain: '//dn-lay.qbox.me'
+    domain: '//118.89.143.109:8088'
   });

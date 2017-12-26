@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 此文件为项目配置文件
  * 切不可直接传至服务端，需要手动配置
  * 
@@ -7,7 +7,7 @@
 module.exports = {
 	host : '*',
   //端口号
-	port : 8888,
+	port : 80,
   //静态资源
   static: {
     //静态资源根目录
@@ -33,7 +33,7 @@ module.exports = {
 	//前端版本控制（css、js、图片、字体）
 	frontEnd: {
     //图床地址
-    img_domain : 'http://127.0.0.1:8088'
+    img_domain : 'http://118.89.143.109:8088'
   },
   //SESSION配置
   session : {

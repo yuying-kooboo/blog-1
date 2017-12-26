@@ -9,9 +9,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV && process.env.NODE_ENV.trim() == 'production';
 const BUILD_PATH = path.resolve(ROOT_PATH, '../../static/build/single-page/');
-const cdnPath = isProduction ? '//dn-lay.qbox.me' : '//127.0.0.1:8088';
+const cdnPath = isProduction ? '//www.kdylawyer.com:8088' : '//127.0.0.1:8088';
 const publicPath = cdnPath + '/build/single-page/';
 
 const config = {

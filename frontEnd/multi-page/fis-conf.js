@@ -29,7 +29,7 @@ fis.match('*.css', {
 //发布位置
 fis.match('**', {
   release: 'build/multi-page/$0',
-  domain: 'http://127.0.0.1:8088'
+  domain: '//118.89.143.109:8088'
 });
 fis.match('**.psd', {
   release: false
@@ -42,6 +42,6 @@ fis.match('*.html', {
 
 //线上使用CDN
 fis.media('production').match('*', {
-  domain: '//dn-lay.qbox.me'
+  domain: '//118.89.143.109:8088'
   // domain: '//127.0.0.1:8088'
 });

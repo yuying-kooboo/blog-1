@@ -135,6 +135,6 @@ function Server(req,res){
 }
 
 //创建服务
-http.createServer(Server).listen(server_port, '127.0.0.1');
+http.createServer(Server).listen(server_port, '0.0.0.0');
 
 console.log('server started ,you can press [ctrl + c] to exit !');
