@@ -11,7 +11,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV && process.env.NODE_ENV.trim() == 'production';
 const BUILD_PATH = path.resolve(ROOT_PATH, '../../static/build/single-page/');
-const cdnPath = isProduction ? '//www.kdylawyer.com:8088' : '//127.0.0.1:8088';
+// const cdnPath = isProduction ? '//www.kdylawyer.com:8088' : '//127.0.0.1:8088';
+const cdnPath = isProduction ? '//118.89.143.109:8088' : '//127.0.0.1:8088';
 const publicPath = cdnPath + '/build/single-page/';
 
 const config = {

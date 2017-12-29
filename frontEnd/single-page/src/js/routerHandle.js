@@ -61,7 +61,7 @@ Page.prototype = {
 
 export default function () {
   lofox.beforeTitleChange = function (title) {
-    return title + '_剧中人的个人空间 网页设计师博客 互动设计学习者';
+    return  '_寇德扬 小寇个人博客 专业律师服务';
   };
   // 视图刷新前，销毁上一个对象
   lofox
@@ -73,7 +73,7 @@ export default function () {
     })
     // 首页
     .set('/', function () {
-      this.title('小剧客栈');
+      this.title('小寇客栈');
       navigation.setCur('/');
 
       activePage = new IndexPage(new Page());
@@ -100,14 +100,14 @@ export default function () {
     })
     // 全景列表页
     .set('/720', function () {
-      this.title('小剧的全景作品');
+      this.title('小寇的全景作品');
 
       navigation.setCur('720');
       activePage = new PanoListPage(new Page());
     })
     // 摄影作品
     .set('/photography', function () {
-      this.title('小剧的摄影作品');
+      this.title('小寇的摄影作品');
 
       navigation.setCur('photography');
       activePage = new PhotographyListPage(new Page());
